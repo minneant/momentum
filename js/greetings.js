@@ -3,12 +3,14 @@ const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 function paintGreeting(username){
     greeting.innerText = `Hello ${username}!`;
     loginForm.classList.add(HIDDEN_CLASSNAME);
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
+
 if (savedUsername === null) {
     // Show the login form if no username is saved
     greeting.classList.add(HIDDEN_CLASSNAME);
